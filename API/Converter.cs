@@ -5,7 +5,7 @@ namespace API
         public static int ToCelsius(ETemperatureUnit @from, double value) => @from switch
         {
             // From Fahrenheit to Celsius = 5/9 * (F – 32)
-            ETemperatureUnit.Fahrenheit => (int)(5 * (value * 32) / 9),
+            ETemperatureUnit.Fahrenheit => (int)(5 * (value - 32) / 9),
             // From Kelvin to Celsius = K – 273
             ETemperatureUnit.Kelvin => (int)value - 273,
             _ => (int)value,
